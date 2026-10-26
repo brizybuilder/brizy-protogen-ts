@@ -12,14 +12,27 @@ export type DeleteUserMessage = Message<"brizyMessage.cloud.DeleteUserMessage"> 
     userId: string;
 };
 export declare const DeleteUserMessageSchema: GenMessage<DeleteUserMessage>;
+export type UpdateUserMessage = Message<"brizyMessage.cloud.UpdateUserMessage"> & {
+    descriminator: Message_DescriminatorType;
+    userId: string;
+    updatedProperties: string[];
+};
+export declare const UpdateUserMessageSchema: GenMessage<UpdateUserMessage>;
 export type CreateProjectMessage = Message<"brizyMessage.cloud.CreateProjectMessage"> & {
     descriminator: Message_DescriminatorType;
     projectId: string;
 };
 export declare const CreateProjectMessageSchema: GenMessage<CreateProjectMessage>;
+export type UpdateProjectMessage = Message<"brizyMessage.cloud.UpdateProjectMessage"> & {
+    descriminator: Message_DescriminatorType;
+    projectId: string;
+    updatedProperties: string[];
+};
+export declare const UpdateProjectMessageSchema: GenMessage<UpdateProjectMessage>;
 export type DeleteProjectMessage = Message<"brizyMessage.cloud.DeleteProjectMessage"> & {
     descriminator: Message_DescriminatorType;
     projectId: string;
+    hardDelete: boolean;
 };
 export declare const DeleteProjectMessageSchema: GenMessage<DeleteProjectMessage>;
 export type CloneProjectMessage = Message<"brizyMessage.cloud.CloneProjectMessage"> & {

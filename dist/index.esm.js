@@ -9,8 +9,8 @@ export { anyPack, anyIs } from "@bufbuild/protobuf/wkt";
 import { base64Decode } from "@bufbuild/protobuf/wire";
 import { fromBinary } from "@bufbuild/protobuf";
 import { MessageSchema, Message_DescriminatorType, } from "./gen/message_pb";
-import { CreateCollectionItemMessageSchema, CreateCollectionTypeMessageSchema, CreateCustomerMessageSchema, DeleteCollectionItemMessageSchema, DeleteCollectionTypeMessageSchema, DeleteCustomerMessageSchema, UpdateCollectionItemMessageSchema, UpdateCollectionTypeMessageSchema, UpdateCustomerMessageSchema, CreateSymbolMessageSchema, UpdateSymbolMessageSchema, DeleteSymbolMessageSchema, } from "./gen/brizy_pb";
-import { ClearPlatformCacheMessageSchema, CloneCollectionItemMessageSchema, CloneCustomerMessageSchema, CloneProjectMessageSchema, CreateProjectMessageSchema, CreateUserMessageSchema, DeleteProjectMessageSchema, DeleteUserMessageSchema, } from "./gen/cloud_pb";
+import { CreateCollectionItemMessageSchema, CreateCollectionTypeMessageSchema, CreateCustomerMessageSchema, DeleteCollectionItemMessageSchema, DeleteCollectionTypeMessageSchema, DeleteCustomerMessageSchema, UpdateCollectionItemMessageSchema, UpdateCollectionTypeMessageSchema, UpdateCustomerMessageSchema, CreateSymbolMessageSchema, UpdateSymbolMessageSchema, DeleteSymbolMessageSchema, PublishedScheduledCollectionItemMessageSchema, CreateGlobalBlockMessageSchema, UpdateGlobalBlockMessageSchema, DeleteGlobalBlockMessageSchema, } from "./gen/brizy_pb";
+import { ClearPlatformCacheMessageSchema, CloneCollectionItemMessageSchema, CloneCustomerMessageSchema, CloneProjectMessageSchema, CreateProjectMessageSchema, CreateUserMessageSchema, DeleteProjectMessageSchema, DeleteUserMessageSchema, UpdateProjectMessageSchema, UpdateUserMessageSchema, } from "./gen/cloud_pb";
 import { DoctrineEventMessageSchema, } from "./gen/doctrine_pb";
 import { NotificationMessageSchema, } from "./gen/notification_pb";
 import { RemoveEntityTranslationMessageSchema, TranslateEntityMessageSchema, } from "./gen/translation_pb";
@@ -75,7 +75,20 @@ export function getMessage(buffer) {
                 return fromBinary(UpdateSymbolMessageSchema, payload);
             case Message_DescriminatorType.DELETE_SYMBOL_MESSAGE:
                 return fromBinary(DeleteSymbolMessageSchema, payload);
+            case Message_DescriminatorType.PUBLISH_SCHEDULED_COLLECTION_ITEM_MESSAGE:
+                return fromBinary(PublishedScheduledCollectionItemMessageSchema, payload);
+            case Message_DescriminatorType.CREATE_GLOBAL_BLOCK_MESSAGE:
+                return fromBinary(CreateGlobalBlockMessageSchema, payload);
+            case Message_DescriminatorType.UPDATE_GLOBAL_BLOCK_MESSAGE:
+                return fromBinary(UpdateGlobalBlockMessageSchema, payload);
+            case Message_DescriminatorType.DELETE_GLOBAL_BLOCK_MESSAGE:
+                return fromBinary(DeleteGlobalBlockMessageSchema, payload);
+            case Message_DescriminatorType.CLOUD_UPDATE_USER_MESSAGE:
+                return fromBinary(UpdateUserMessageSchema, payload);
+            case Message_DescriminatorType.CLOUD_UPDATE_PROJECT_MESSAGE:
+                return fromBinary(UpdateProjectMessageSchema, payload);
             default:
+                discriminator;
                 return baseMessage;
         }
     }

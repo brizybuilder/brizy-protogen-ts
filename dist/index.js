@@ -100,7 +100,20 @@ function getMessage(buffer) {
                 return (0, protobuf_2.fromBinary)(brizy_pb_1.UpdateSymbolMessageSchema, payload);
             case message_pb_1.Message_DescriminatorType.DELETE_SYMBOL_MESSAGE:
                 return (0, protobuf_2.fromBinary)(brizy_pb_1.DeleteSymbolMessageSchema, payload);
+            case message_pb_1.Message_DescriminatorType.PUBLISH_SCHEDULED_COLLECTION_ITEM_MESSAGE:
+                return (0, protobuf_2.fromBinary)(brizy_pb_1.PublishedScheduledCollectionItemMessageSchema, payload);
+            case message_pb_1.Message_DescriminatorType.CREATE_GLOBAL_BLOCK_MESSAGE:
+                return (0, protobuf_2.fromBinary)(brizy_pb_1.CreateGlobalBlockMessageSchema, payload);
+            case message_pb_1.Message_DescriminatorType.UPDATE_GLOBAL_BLOCK_MESSAGE:
+                return (0, protobuf_2.fromBinary)(brizy_pb_1.UpdateGlobalBlockMessageSchema, payload);
+            case message_pb_1.Message_DescriminatorType.DELETE_GLOBAL_BLOCK_MESSAGE:
+                return (0, protobuf_2.fromBinary)(brizy_pb_1.DeleteGlobalBlockMessageSchema, payload);
+            case message_pb_1.Message_DescriminatorType.CLOUD_UPDATE_USER_MESSAGE:
+                return (0, protobuf_2.fromBinary)(cloud_pb_1.UpdateUserMessageSchema, payload);
+            case message_pb_1.Message_DescriminatorType.CLOUD_UPDATE_PROJECT_MESSAGE:
+                return (0, protobuf_2.fromBinary)(cloud_pb_1.UpdateProjectMessageSchema, payload);
             default:
+                discriminator;
                 return baseMessage;
         }
     }

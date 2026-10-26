@@ -38,12 +38,12 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brizy/protogen-ts.git"
+    "url": "git+https://github.com/brizybuilder/brizy-protogen-ts.git"
   },
   "bugs": {
-    "url": "https://github.com/brizy/protogen-ts/issues"
+    "url": "https://github.com/brizybuilder/brizy-protogen-ts/issues"
   },
-  "homepage": "https://github.com/brizy/protogen-ts#readme",
+  "homepage": "https://github.com/brizybuilder/brizy-protogen-ts#readme",
   "dependencies": {
     "@bufbuild/protobuf": "^2.6.3"
   },
