@@ -18,8 +18,16 @@ export type UpdateCollectionItemMessage = Message<"brizyMessage.brizy.UpdateColl
     brziyApiAccessToken: string;
     userId: string;
     cloudAccessToken: string;
+    updatedProperties: string[];
 };
 export declare const UpdateCollectionItemMessageSchema: GenMessage<UpdateCollectionItemMessage>;
+export type PublishedScheduledCollectionItemMessage = Message<"brizyMessage.brizy.PublishedScheduledCollectionItemMessage"> & {
+    descriminator: Message_DescriminatorType;
+    projectIri: string;
+    entityIri: string;
+    publishDateTimestamp: bigint;
+};
+export declare const PublishedScheduledCollectionItemMessageSchema: GenMessage<PublishedScheduledCollectionItemMessage>;
 export type DeleteCollectionItemMessage = Message<"brizyMessage.brizy.DeleteCollectionItemMessage"> & {
     descriminator: Message_DescriminatorType;
     projectIri: string;
@@ -45,6 +53,7 @@ export type UpdateCollectionTypeMessage = Message<"brizyMessage.brizy.UpdateColl
     brziyApiAccessToken: string;
     userId: string;
     cloudAccessToken: string;
+    updatedProperties: string[];
 };
 export declare const UpdateCollectionTypeMessageSchema: GenMessage<UpdateCollectionTypeMessage>;
 export type DeleteCollectionTypeMessage = Message<"brizyMessage.brizy.DeleteCollectionTypeMessage"> & {
@@ -72,6 +81,7 @@ export type UpdateCustomerMessage = Message<"brizyMessage.brizy.UpdateCustomerMe
     brziyApiAccessToken: string;
     userId: string;
     cloudAccessToken: string;
+    updatedProperties: string[];
 };
 export declare const UpdateCustomerMessageSchema: GenMessage<UpdateCustomerMessage>;
 export type DeleteCustomerMessage = Message<"brizyMessage.brizy.DeleteCustomerMessage"> & {
@@ -99,6 +109,7 @@ export type UpdateSymbolMessage = Message<"brizyMessage.brizy.UpdateSymbolMessag
     brziyApiAccessToken: string;
     userId: string;
     cloudAccessToken: string;
+    updatedProperties: string[];
 };
 export declare const UpdateSymbolMessageSchema: GenMessage<UpdateSymbolMessage>;
 export type DeleteSymbolMessage = Message<"brizyMessage.brizy.DeleteSymbolMessage"> & {
@@ -110,3 +121,31 @@ export type DeleteSymbolMessage = Message<"brizyMessage.brizy.DeleteSymbolMessag
     cloudAccessToken: string;
 };
 export declare const DeleteSymbolMessageSchema: GenMessage<DeleteSymbolMessage>;
+export type CreateGlobalBlockMessage = Message<"brizyMessage.brizy.CreateGlobalBlockMessage"> & {
+    descriminator: Message_DescriminatorType;
+    projectIri: string;
+    entityIri: string;
+    brziyApiAccessToken: string;
+    userId: string;
+    cloudAccessToken: string;
+};
+export declare const CreateGlobalBlockMessageSchema: GenMessage<CreateGlobalBlockMessage>;
+export type UpdateGlobalBlockMessage = Message<"brizyMessage.brizy.UpdateGlobalBlockMessage"> & {
+    descriminator: Message_DescriminatorType;
+    projectIri: string;
+    entityIri: string;
+    brziyApiAccessToken: string;
+    userId: string;
+    cloudAccessToken: string;
+    updatedProperties: string[];
+};
+export declare const UpdateGlobalBlockMessageSchema: GenMessage<UpdateGlobalBlockMessage>;
+export type DeleteGlobalBlockMessage = Message<"brizyMessage.brizy.DeleteGlobalBlockMessage"> & {
+    descriminator: Message_DescriminatorType;
+    projectIri: string;
+    entityIri: string;
+    brziyApiAccessToken: string;
+    userId: string;
+    cloudAccessToken: string;
+};
+export declare const DeleteGlobalBlockMessageSchema: GenMessage<DeleteGlobalBlockMessage>;

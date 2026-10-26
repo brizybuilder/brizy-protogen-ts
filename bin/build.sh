@@ -57,8 +57,9 @@ fi
 # Copy TypeScript declarations
 echo -e "${BLUE}📦 Copying TypeScript declarations (index.d.ts)...${NC}"
 if [ -f "$DIST_TEMP_DIR/types/src/index.d.ts" ]; then
-    cp "$DIST_TEMP_DIR/types/src/index.d.ts" "$DIST_DIR/index.d.ts"
-    echo -e "${GREEN}✅ index.d.ts copied${NC}"
+    # Fix the import paths from ../gen/ to ./gen/
+    sed 's|../gen/|./gen/|g' "$DIST_TEMP_DIR/types/src/index.d.ts" > "$DIST_DIR/index.d.ts"
+    echo -e "${GREEN}✅ index.d.ts copied and import paths fixed${NC}"
 else
     echo -e "${RED}❌ TypeScript declarations not found at $DIST_TEMP_DIR/types/src/index.d.ts${NC}"
     exit 1
