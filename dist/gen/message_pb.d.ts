@@ -36,6 +36,7 @@ export declare enum Message_DescriminatorType {
     UPDATE_GLOBAL_BLOCK_MESSAGE = 27,
     DELETE_GLOBAL_BLOCK_MESSAGE = 28,
     CLOUD_UPDATE_USER_MESSAGE = 29,
-    CLOUD_UPDATE_PROJECT_MESSAGE = 30
+    CLOUD_UPDATE_PROJECT_MESSAGE = 30,
+    CLOUD_UPDATED_PROJECT_METAFIELD_MESSAGE = 31
 }
 export declare const Message_DescriminatorTypeSchema: GenEnum<Message_DescriminatorType>;

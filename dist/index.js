@@ -112,6 +112,8 @@ function getMessage(buffer) {
                 return (0, protobuf_2.fromBinary)(cloud_pb_1.UpdateUserMessageSchema, payload);
             case message_pb_1.Message_DescriminatorType.CLOUD_UPDATE_PROJECT_MESSAGE:
                 return (0, protobuf_2.fromBinary)(cloud_pb_1.UpdateProjectMessageSchema, payload);
+            case message_pb_1.Message_DescriminatorType.CLOUD_UPDATED_PROJECT_METAFIELD_MESSAGE:
+                return (0, protobuf_2.fromBinary)(cloud_pb_1.UpdatedProjectMetaFieldMessageSchema, payload);
             default:
                 discriminator;
                 return baseMessage;

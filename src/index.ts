@@ -84,6 +84,7 @@ import {
   DeleteProjectMessageSchema,
   DeleteUserMessageSchema,
   UpdateProjectMessageSchema,
+  UpdatedProjectMetaFieldMessageSchema,
   UpdateUserMessageSchema,
   type ClearPlatformCacheMessage,
   type CloneCollectionItemMessage,
@@ -94,6 +95,7 @@ import {
   type DeleteProjectMessage,
   type DeleteUserMessage,
   type UpdateProjectMessage,
+  type UpdatedProjectMetaFieldMessage,
   type UpdateUserMessage,
 } from "../gen/cloud_pb";
 
@@ -142,6 +144,7 @@ export type AllMessageTypes =
   | DeleteProjectMessage
   | DeleteUserMessage
   | UpdateProjectMessage
+  | UpdatedProjectMetaFieldMessage
   | UpdateUserMessage
   | DoctrineEventMessage
   | NotificationMessage
@@ -258,6 +261,9 @@ export function getMessage(
 
       case Message_DescriminatorType.CLOUD_UPDATE_PROJECT_MESSAGE:
         return fromBinary(UpdateProjectMessageSchema, payload);
+
+      case Message_DescriminatorType.CLOUD_UPDATED_PROJECT_METAFIELD_MESSAGE:
+        return fromBinary(UpdatedProjectMetaFieldMessageSchema, payload);
 
       default:
         // Compile-time: a discriminator added to the IDL without a case above fails the build.

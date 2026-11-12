@@ -64,3 +64,11 @@ export type ClearPlatformCacheMessage = Message<"brizyMessage.cloud.ClearPlatfor
     descriminator: Message_DescriminatorType;
 };
 export declare const ClearPlatformCacheMessageSchema: GenMessage<ClearPlatformCacheMessage>;
+export type UpdatedProjectMetaFieldMessage = Message<"brizyMessage.cloud.UpdatedProjectMetaFieldMessage"> & {
+    descriminator: Message_DescriminatorType;
+    projectIri: string;
+    metafieldName: string;
+    oldValue: string;
+    brziyApiAccessToken: string;
+};
+export declare const UpdatedProjectMetaFieldMessageSchema: GenMessage<UpdatedProjectMetaFieldMessage>;
